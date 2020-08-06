@@ -12,7 +12,7 @@ def consolidate_cart(cart)
   hash = {}
   cart.each do |cart_item|
     key = cart_item
-    value  = hash[key]  #
+    value  = hash[key]  
     if  value == 1
       hash[key] = value + 1
     else
