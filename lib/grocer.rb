@@ -1,7 +1,7 @@
 require 'pry'
 def find_item_by_name_in_collection(name, collection)
   collection.each do |element|
-    if element[:item] == name  #element[:item] is the value/itemname
+    if element[:item] == name  
       return element
     end
   end
