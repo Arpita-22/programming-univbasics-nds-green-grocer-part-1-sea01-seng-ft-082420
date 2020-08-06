@@ -16,19 +16,34 @@ def consolidate_cart(cart)
   #
   # REMEMBER: This returns a new Array that represents the cart. Don't merely
   # change `cart` (i.e. mutate) it. It's easier to return a new thing.
-  arr = []
+  def consolidate_cart(cart)
+  hash = {}
+  #O(n)
   cart.each do |cart_item|
-    cart_item.dup.each do|key,value|
-     if cart_item[:count] != nil
-     cart_item[:count] += 1
-     else
-       cart_item[:count] = 1
-      #binding.pry
-      end
-     end
-    arr << cart_item
-   end
+    key = cart_item
+    value  = hash[key]
+    if  value == 1
+      #O(1)
+      hash[key] = value + 1
+    else
+      hash[key] = 1
+    end
+  end
+  arr = []
+  #O(n)
+  hash.each do |key, value|
+    #data = key
+    #data[:count] = value
+    data = {
+      :item => key[:item],
+      :price => key[:price],
+      :clearance => key[:clearance],
+      :count => value,
+    }
+    arr << data
+  end
   arr
+end
 end
 
 
