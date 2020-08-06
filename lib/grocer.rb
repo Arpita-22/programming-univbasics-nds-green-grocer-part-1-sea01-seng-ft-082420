@@ -44,7 +44,6 @@ def consolidate_cart(cart)
   end
   arr
 end
-end
 
 
   
